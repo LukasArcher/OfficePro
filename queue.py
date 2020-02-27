@@ -1,4 +1,5 @@
 from heapq import heappush, heappop
+from exepcions import EmptyQueue
 
 
 class Queue:
@@ -22,6 +23,5 @@ class Queue:
             self.beginning += 1
             removed = heappop(self.queue)
             return removed[1]
-        else:
-            return
+        raise EmptyQueue("Empty queue exception")
 
