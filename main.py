@@ -13,12 +13,12 @@ vip_password = "VIP"
 
 if __name__ == '__main__':
     while True:
-        choose = choice()
-        if choose in queues.keys():
-            num = queues[choose].add_user()
-            new_user(choose, num)
+        choose = choice().split()
+        if choose[0] in queues.keys():
+            num = queues[choose[0]].add_user()
+            new_user(choose[0], num)
             clear()
-        elif choose == secret_password:
+        elif choose[0] == secret_password:
             secret_l = secret_choice()
             if secret_l in queues.keys():
                 num = queues[secret_l].remove_user()
@@ -27,8 +27,8 @@ if __name__ == '__main__':
             else:
                 print(error())
                 clear()
-        elif choose == vip_password:
-            vip_l = vip_choice()
+        elif choose[0] == vip_password:
+            vip_l = choose[1]
             if vip_l in queues.keys():
                 num = queues[vip_l].add_vip()
                 next_user(vip_l, num)
