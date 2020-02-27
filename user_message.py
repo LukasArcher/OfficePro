@@ -41,4 +41,4 @@ def next_user(letter, number):
 
 
 def error():
-    return "You are fucking dumb! Try again!"
+    return "I don't understand that command..."
